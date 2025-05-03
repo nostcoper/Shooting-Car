@@ -21,16 +21,18 @@ public class BoatController : MonoBehaviour
 
         if (Mathf.Abs(v) > 0.01f)
         {
+            // Si hay input, aplicamos fuerza normalmente
             rb.AddForce(transform.forward * v * acelerateSpeed * Time.deltaTime);
         }
         else
         {
+            // Si NO hay input, frenamos el bote aplicando resistencia al movimiento
             Vector3 horizontalVelocity = rb.linearVelocity;
-            horizontalVelocity.y = 0; 
+            horizontalVelocity.y = 0; // evitamos afectar el eje vertical
 
-            Vector3 brakeForce = -horizontalVelocity * 2f;
+            Vector3 brakeForce = -horizontalVelocity * 0.5f; // puedes ajustar la intensidad
             rb.AddForce(brakeForce, ForceMode.Acceleration);
-        }
+        }
 
-    }
+    }
 }
