@@ -3,8 +3,8 @@ using UnityEngine;
 public class LootBox : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public Collider BC; //MeshCollider
-    public Renderer MR; //MeshRenderer
+    private Collider BC; //MeshCollider
+    private Renderer MR; //MeshRenderer
     
     public float reaparitionTimer  = 5f;
     public bool isTouch = false;
