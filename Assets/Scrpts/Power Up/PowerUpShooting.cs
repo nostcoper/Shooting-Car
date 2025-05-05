@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "New PowerUp", menuName = "PowerUp/Shooting")]
@@ -21,6 +22,9 @@ public class PowerUpShooting : PowerUpBase
         if (remainingAmmo > 0)
         {
             GameObject projectile = Instantiate(projectilePrefab, firePoint.position, firePoint.rotation);
+            Bullet bullet = projectile.GetComponent<Bullet>();
+            bullet.owner = firePoint.parent.gameObject;
+
             remainingAmmo--;
         }
     }

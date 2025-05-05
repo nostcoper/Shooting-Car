@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
+    public GameObject owner;
     public float forwardSpeed = 15f;
     public int range = 5;
     private bool falling = false;
@@ -35,6 +36,18 @@ public class Bullet : MonoBehaviour
         else
         {
             Debug.Log("Colisión con: " + other.gameObject.name);
+        }
+    }
+
+     private void OnCollisionEnter(Collision collision)
+    {
+        GameObject other = collision.gameObject;
+
+        if (other == owner) return;
+
+        if (other.CompareTag("Player"))
+        {
+            owner.GetComponent<BoatController>().addPoint();
         }
     }
 }

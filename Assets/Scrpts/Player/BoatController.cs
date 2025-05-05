@@ -9,6 +9,7 @@ public class BoatController : MonoBehaviour
     private Vector2 moveDirection;
     private bool powerUpInput;
     public PowerUpBase CurrentPowerUp;
+    public int points;
 
     void Start()
     {
@@ -50,5 +51,9 @@ public class BoatController : MonoBehaviour
             Vector3 brakeForce = -horizontalVelocity * 0.1f;
             rb.AddForce(brakeForce, ForceMode.Acceleration);
         }
+    }
+
+    public void addPoint(){
+        points++;
     }
 }

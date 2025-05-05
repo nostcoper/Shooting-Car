@@ -8,8 +8,3 @@ public abstract class PowerUpBase : ScriptableObject
     public abstract void Activate(GameObject emisor);
     public abstract bool IsFinished();
 }
-
-
-public abstract class PowerUpShootingBase : PowerUpBase
-{
-}
