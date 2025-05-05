@@ -137,7 +137,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698295431798505643, guid: 3b772cd8a36b77b4bba10a891609051b, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4205005458691403338, guid: 3b772cd8a36b77b4bba10a891609051b, type: 3}
       propertyPath: m_LocalPosition.x
@@ -263,7 +263,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1698295431798505643, guid: 3b772cd8a36b77b4bba10a891609051b, type: 3}
       propertyPath: m_DefaultActionMap
-      value: f1ee724f-cc18-434d-96d0-3575a8949b42
+      value: WASD
       objectReference: {fileID: 0}
     - target: {fileID: 1698295431798505643, guid: 3b772cd8a36b77b4bba10a891609051b, type: 3}
       propertyPath: m_DefaultControlScheme
@@ -271,7 +271,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1698295431798505643, guid: 3b772cd8a36b77b4bba10a891609051b, type: 3}
       propertyPath: m_NeverAutoSwitchControlSchemes
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4205005458691403338, guid: 3b772cd8a36b77b4bba10a891609051b, type: 3}
       propertyPath: m_LocalPosition.x
