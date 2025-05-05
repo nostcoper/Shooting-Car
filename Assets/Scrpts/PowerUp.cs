@@ -25,7 +25,7 @@ public class PowerUp : MonoBehaviour
                 Debug.Log("Power-up activado: Bala de largo alcance");
             }
 
-            Destroy(gameObject);
+            //Destroy(gameObject);
         }
     }
 }
