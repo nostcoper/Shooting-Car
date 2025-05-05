@@ -1184,8 +1184,9 @@ GameObject:
   - component: {fileID: 6470383565863558559}
   - component: {fileID: 2936662053066953839}
   - component: {fileID: 4602188297964502782}
+  - component: {fileID: 1698295431798505643}
   m_Layer: 0
-  m_Name: single boat
+  m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1270,7 +1271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turnSpeed: 100
-  acelerateSpeed: 500
+  accelerateSpeed: 500
+  CurrentPowerUp: {fileID: 0}
 --- !u!114 &4602188297964502782
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1283,9 +1285,100 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ee70985237c1e542a1587a1ea71f3e4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  normalBulletPrefab: {fileID: 8303147819660016373, guid: c91fa7ecad726614991f6c6cbc53c2f4, type: 3}
-  longRangeBulletPrefab: {fileID: 8303147819660016373, guid: f709e763963b2254190d2101a9d85b95, type: 3}
-  firePoint: {fileID: 683659597074973901}
+--- !u!114 &1698295431798505643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4797241421053965897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 688a00c5f1d17ed4bacf40f1476da729, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2936662053066953839}
+        m_TargetAssemblyTypeName: BoatController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: cb9c758b-e7af-490d-8c50-9c1ce93b0f4b
+    m_ActionName: 'WASD/Movement[/Keyboard/w,/Keyboard/s,/Keyboard/a,/Keyboard/d]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2936662053066953839}
+        m_TargetAssemblyTypeName: BoatController, Assembly-CSharp
+        m_MethodName: OnPowerUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 83067202-4393-42b0-8774-b4dd0af8132b
+    m_ActionName: 'WASD/PowerUp[/Keyboard/space]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2936662053066953839}
+        m_TargetAssemblyTypeName: BoatController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 395537ae-698d-45a3-a9e9-9e617d6ef58d
+    m_ActionName: 'Arrow/Movement[/Keyboard/upArrow,/Keyboard/downArrow,/Keyboard/leftArrow,/Keyboard/rightArrow]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2936662053066953839}
+        m_TargetAssemblyTypeName: BoatController, Assembly-CSharp
+        m_MethodName: OnPowerUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b386569f-da3c-4c87-8cde-899cfae42079
+    m_ActionName: 'Arrow/PowerUp[/Keyboard/space]'
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: WASD
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &5919150198454658769
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,7 +1389,7 @@ GameObject:
   m_Component:
   - component: {fileID: 683659597074973901}
   m_Layer: 0
-  m_Name: FIre Position
+  m_Name: Fire Position
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2017,7 +2110,7 @@ GameObject:
   - component: {fileID: 8416825980024223971}
   - component: {fileID: 59859784415985920}
   m_Layer: 0
-  m_Name: Main Camera
+  m_Name: Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
