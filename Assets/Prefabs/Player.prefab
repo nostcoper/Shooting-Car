@@ -1185,6 +1185,7 @@ GameObject:
   - component: {fileID: 2936662053066953839}
   - component: {fileID: 1698295431798505643}
   - component: {fileID: 8289716518388213475}
+  - component: {fileID: 7472290841297271797}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1382,6 +1383,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreText: {fileID: 700604086027949408}
   controller: {fileID: 2936662053066953839}
+--- !u!114 &7472290841297271797
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4797241421053965897}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68c7b1ef103dcbb43828545d69682882, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  centerZone: {fileID: 0}
+  bouncyForce: 300
 --- !u!1 &5919150198454658769
 GameObject:
   m_ObjectHideFlags: 0
