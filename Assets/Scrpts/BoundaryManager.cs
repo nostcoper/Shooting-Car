@@ -4,10 +4,10 @@ public class Boundary : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public Transform centerZone;
-    public float bouncyForce = 300f;
+    public float bouncyForce = 50f;
     void Start()
     {
-
+       centerZone = GameObject.FindWithTag("Center").transform;
     }
 
     // Update is called once per frame
