@@ -21,7 +21,6 @@ public class BoatController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         moveDirection = context.ReadValue<Vector2>();
-        Debug.Log(moveDirection);
     }
 
     public void OnPowerUp(InputAction.CallbackContext context)
