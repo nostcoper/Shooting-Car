@@ -149,5 +149,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 379fbe97f6ebb424b9ea92fde5427e2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  forwardSpeed: 100
-  range: 2
+  owner: {fileID: 0}
+  forwardSpeed: 75
+  range: 3
