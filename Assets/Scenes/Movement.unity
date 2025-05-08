@@ -145,7 +145,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7efad3b372d34dd4a8aab1499301dc8c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.11
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7efad3b372d34dd4a8aab1499301dc8c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -153,7 +153,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7efad3b372d34dd4a8aab1499301dc8c, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -12.2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2774220344278030320, guid: 7efad3b372d34dd4a8aab1499301dc8c, type: 3}
       propertyPath: m_LocalRotation.w
@@ -484,7 +484,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   numberPlayer: 2
-  playerPrefab: {fileID: 4797241421053965897, guid: 3b772cd8a36b77b4bba10a891609051b, type: 3}
+  playerPrefab: {fileID: 2323281713053060351, guid: 4d9362687fe143d41baae6cb6b70cb2d, type: 3}
   spawnPoints:
   - {fileID: 1942704968}
   - {fileID: 659896793}
