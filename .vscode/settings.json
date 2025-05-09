@@ -56,5 +56,5 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "CarShooting.sln"
+    "dotnet.defaultSolution": "Shooting-Car.sln"
 }
