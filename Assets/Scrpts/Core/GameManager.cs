@@ -19,6 +19,12 @@ public class GameManager : MonoBehaviour
     public List<Camera> playerCameras = new List<Camera>();
 
     private bool gameEnded = false;
+
+    private void OnEnable() {
+        numberPlayer =  ConfigManager.Instance.PlayerNumber;    
+        pointWin = ConfigManager.Instance.WinPoint;  
+    }
+
     void Start()
     {
         for (int i = 0; i < numberPlayer; i++)
@@ -32,7 +38,6 @@ public class GameManager : MonoBehaviour
     {
         UnityPlayerInput currentPlayer;
         
-        // Para los dos primeros jugadores, compartimos el teclado
         if (id < 2)
         {
             string controlScheme = id == 0 ? "WASD" : "Arrows";
@@ -90,7 +95,7 @@ public class GameManager : MonoBehaviour
             case 3:
                 playerCameras[0].rect = new Rect(0f, 0.5f, 0.5f, 0.5f); // Arriba izquierda
                 playerCameras[1].rect = new Rect(0.5f, 0.5f, 0.5f, 0.5f); // Arriba derecha
-                playerCameras[2].rect = new Rect(0f, 0f, 1f, 0.5f); // Abajo a lo largo
+                playerCameras[2].rect = new Rect(0f, 0f, 0.5f, 0.5f); // Abajo izquierda
                 break;
             case 4:
                 playerCameras[0].rect = new Rect(0f, 0.5f, 0.5f, 0.5f); // Arriba izquierda
@@ -101,20 +106,37 @@ public class GameManager : MonoBehaviour
         }
     } 
 
- void Update()
-    {
-        if (gameEnded) return;
+void Update()
+{
+    int highestPoints = -1;
 
-        foreach (GameObject player in playerList)
+    // Buscar el puntaje más alto
+    foreach (GameObject player in playerList)
+    {
+        BoatController controller = player.GetComponent<BoatController>();
+        if (controller != null && controller.points > highestPoints)
         {
-            BoatController controller = player.GetComponent<BoatController>();
-            if (controller != null && controller.points >= pointWin)
-            {
-                gameEnded = true;
-                Debug.Log(player.name + " ha ganado con " + controller.points + " puntos.");
-                // Aquí podrías llamar a un método para mostrar pantalla de victoria, detener el juego, etc.
-                break;
-            }
+            highestPoints = controller.points;
         }
     }
+
+    // Marcar como ganadores a todos los jugadores con el puntaje más alto
+    foreach (GameObject player in playerList)
+    {
+        BoatController controller = player.GetComponent<BoatController>();
+        if (controller != null)
+        {
+            controller.winner = (controller.points == highestPoints);
+        }
+    }
+
+    // Verificar si alguno de los ganadores alcanza el puntaje objetivo
+    if (!gameEnded && highestPoints >= pointWin)
+    {
+        gameEnded = true;
+        Debug.Log("Juego terminado. Jugadores con " + highestPoints + " puntos han ganado.");
+        // Aquí puedes agregar lógica de finalización del juego
+    }
+}
+
 }
