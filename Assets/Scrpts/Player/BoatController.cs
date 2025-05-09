@@ -11,6 +11,8 @@ public class BoatController : MonoBehaviour
     public PowerUpBase CurrentPowerUp;
     public int points;
     public bool winner = false;
+
+    public GameObject flagMesh;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
