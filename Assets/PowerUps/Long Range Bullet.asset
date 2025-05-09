@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Long Range Bullet
   m_EditorClassIdentifier: 
   Name: 
-  powerUpIcon: {fileID: 0}
+  powerUpIcon: {fileID: 21300000, guid: dde98bd28b250e14b9f1d3a3cc391d98, type: 3}
   probability: 0.3
   ammo: 1
   projectilePrefab: {fileID: 8303147819660016373, guid: f709e763963b2254190d2101a9d85b95, type: 3}
