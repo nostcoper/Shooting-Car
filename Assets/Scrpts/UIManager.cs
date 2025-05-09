@@ -20,6 +20,6 @@ public class UIManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        scoreText.text = $"Score: {controller.points}";
+        scoreText.text = " " + controller.points;
     }
 }
