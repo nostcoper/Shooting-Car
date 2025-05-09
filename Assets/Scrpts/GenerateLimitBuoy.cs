@@ -32,7 +32,7 @@ public class GenerateLimitBoy : MonoBehaviour
             float t = i / (float)(numBuoys - 1);
 
             Vector3 position = spline.EvaluatePosition(t);
-            position.y = 1.8f;
+            position.y = 1.23f;
         
 
             GameObject BuoyObject = Instantiate(BuoyPrefab, position, Quaternion.Euler(-90f,0f,0f), transform );
