@@ -28,7 +28,7 @@ public class SetupMenuManager : MonoBehaviour
         pointsRightArrow.onClick.AddListener(() => ChangePoints(1));
 
         GameScene.onClick.AddListener(() => SceneManager.LoadScene("Movement"));
-        MenuScene.onClick.AddListener(() => SceneManager.LoadScene("GameScene"));
+        MenuScene.onClick.AddListener(() =>  Application.Quit());
 
         UpdateDisplay(playersText, ConfigManager.Instance.PlayerNumber);
         UpdateDisplay(pointsText, ConfigManager.Instance.WinPoint);
