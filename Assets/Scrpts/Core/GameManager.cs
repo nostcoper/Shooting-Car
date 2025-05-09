@@ -12,6 +12,9 @@ public class GameManager : MonoBehaviour
     public GameObject playerPrefab;
     public Transform[] spawnPoints;
 
+    [Header("Lista de materiales posibles")]
+    public Material[] materialsAvailable;
+
     public int pointWin;
 
     [Header("Components")]
@@ -42,7 +45,14 @@ public class GameManager : MonoBehaviour
         {
             string controlScheme = id == 0 ? "WASD" : "Arrows";
             string actionMap = controlScheme;
-            
+
+            //Añadir Material a la bandera
+            BoatController boatController = playerPrefab.GetComponent<BoatController>();
+            SkinnedMeshRenderer boatMaterial = boatController.flagMesh.GetComponent<SkinnedMeshRenderer>();
+            boatMaterial.material = materialsAvailable[id];
+
+
+
             currentPlayer = UnityPlayerInput.Instantiate(
                 playerPrefab,
                 controlScheme: controlScheme,

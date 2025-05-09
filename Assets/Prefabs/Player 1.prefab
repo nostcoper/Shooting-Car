@@ -451,6 +451,7 @@ MonoBehaviour:
   CurrentPowerUp: {fileID: 0}
   points: 0
   winner: 0
+  flagMesh: {fileID: 8887513493736077578}
 --- !u!114 &9184689962395876784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2936,7 +2937,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 3db5a5f6c665e75489cb9334fd06bb22, type: 2}
+  - {fileID: 2100000, guid: 0385e8564cb49d84682432510c539b8e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
