@@ -12,6 +12,9 @@ public class UIManager : MonoBehaviour
     public Image crow;
     public BoatController controller;
 
+    public Image powerUpIcon;
+
+
 
 
     void Start()
@@ -24,6 +27,15 @@ public class UIManager : MonoBehaviour
     {
         scoreText.text = " " + controller.points;
         crow.enabled =  controller.winner;
+    
+    if(controller.CurrentPowerUp != null ){
+        powerUpIcon.enabled = true;
+        powerUpIcon.sprite = controller.CurrentPowerUp.powerUpIcon;
+    }
+    else
+        {
+            powerUpIcon.enabled = false; //por si no hay power up
+        }
     }
 
 }

@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Triple Bullet
   m_EditorClassIdentifier: 
   Name: 
-  powerUpIcon: {fileID: 0}
+  powerUpIcon: {fileID: 21300000, guid: 357f8849967d8f6418e7641af165394e, type: 3}
   probability: 0.2
   ammo: 3
   projectilePrefab: {fileID: 8303147819660016373, guid: c91fa7ecad726614991f6c6cbc53c2f4, type: 3}
