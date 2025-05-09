@@ -412,6 +412,10 @@ MonoBehaviour:
   - {fileID: 659896793}
   - {fileID: 242612946}
   - {fileID: 1543850497}
+  materialsAvailable:
+  - {fileID: 2100000, guid: 3db5a5f6c665e75489cb9334fd06bb22, type: 2}
+  - {fileID: 2100000, guid: 0385e8564cb49d84682432510c539b8e, type: 2}
+  - {fileID: 2100000, guid: 450fb1c883bba054ca1aa9ef4eb68b03, type: 2}
   pointWin: 0
   playerList: []
   playerCameras: []
