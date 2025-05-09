@@ -26,7 +26,7 @@ RenderSettings:
   m_AmbientIntensity: 1
   m_AmbientMode: 0
   m_SubtractiveShadowColor: {r: 0.42, g: 0.478, b: 0.627, a: 1}
-  m_SkyboxMaterial: {fileID: 10304, guid: 0000000000000000f000000000000000, type: 0}
+  m_SkyboxMaterial: {fileID: 2100000, guid: e31f80ec337547947befad03455188ca, type: 2}
   m_HaloStrength: 0.5
   m_FlareStrength: 1
   m_FlareFadeSpeed: 3
@@ -339,7 +339,7 @@ GameObject:
   - component: {fileID: 904793258}
   m_Layer: 0
   m_Name: GameManager
-  m_TagString: Untagged
+  m_TagString: GameManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -416,6 +416,7 @@ MonoBehaviour:
   - {fileID: 2100000, guid: 3db5a5f6c665e75489cb9334fd06bb22, type: 2}
   - {fileID: 2100000, guid: 0385e8564cb49d84682432510c539b8e, type: 2}
   - {fileID: 2100000, guid: 450fb1c883bba054ca1aa9ef4eb68b03, type: 2}
+  - {fileID: 2100000, guid: 1192b786b5c7c99468ef9253bb6f1fbb, type: 2}
   pointWin: 0
   playerList: []
   playerCameras: []

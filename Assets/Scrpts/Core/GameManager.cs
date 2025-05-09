@@ -1,9 +1,11 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using CarControllerwithShooting;
 using UnityEngine.InputSystem;
 using UnityPlayerInput = UnityEngine.InputSystem.PlayerInput;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -21,7 +23,7 @@ public class GameManager : MonoBehaviour
     public List<GameObject> playerList;
     public List<Camera> playerCameras = new List<Camera>();
 
-    private bool gameEnded = false;
+    public bool gameEnded  { get; private set; }= false;
 
     private void OnEnable() {
         numberPlayer =  ConfigManager.Instance.PlayerNumber;    
@@ -45,13 +47,6 @@ public class GameManager : MonoBehaviour
         {
             string controlScheme = id == 0 ? "WASD" : "Arrows";
             string actionMap = controlScheme;
-
-            //Añadir Material a la bandera
-            BoatController boatController = playerPrefab.GetComponent<BoatController>();
-            SkinnedMeshRenderer boatMaterial = boatController.flagMesh.GetComponent<SkinnedMeshRenderer>();
-            boatMaterial.material = materialsAvailable[id];
-
-
 
             currentPlayer = UnityPlayerInput.Instantiate(
                 playerPrefab,
@@ -89,6 +84,11 @@ public class GameManager : MonoBehaviour
         currentPlayer.transform.rotation = spawnPoints[playerList.Count].rotation;
         playerCameras.Add(currentPlayer.transform.Find("Camera").GetComponent<Camera>());
         currentPlayer.name = $"Player {playerList.Count + 1}";
+ 
+        BoatController boatController = currentPlayer.GetComponent<BoatController>();
+        SkinnedMeshRenderer boatMaterial = boatController.flagMesh.GetComponent<SkinnedMeshRenderer>();
+        boatMaterial.material = materialsAvailable[id];
+
         playerList.Add(currentPlayer.gameObject);
     }
     
@@ -145,8 +145,13 @@ void Update()
     {
         gameEnded = true;
         Debug.Log("Juego terminado. Jugadores con " + highestPoints + " puntos han ganado.");
-        // Aquí puedes agregar lógica de finalización del juego
+        StartCoroutine(FinishGame());
     }
 }
 
+    private IEnumerator FinishGame()
+    {
+        yield return new WaitForSeconds(5f);
+        SceneManager.LoadScene("Menu Setup");
+    }
 }

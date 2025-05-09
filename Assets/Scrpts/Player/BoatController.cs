@@ -1,3 +1,5 @@
+using System.Security.Cryptography.X509Certificates;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -12,6 +14,7 @@ public class BoatController : MonoBehaviour
     public int points;
     public bool winner = false;
 
+
     public GameObject flagMesh;
     void Start()
     {
@@ -23,6 +26,9 @@ public class BoatController : MonoBehaviour
     public void OnMove(InputAction.CallbackContext context)
     {
         moveDirection = context.ReadValue<Vector2>();
+    }
+
+    void Update(){
     }
 
     public void OnPowerUp(InputAction.CallbackContext context)
