@@ -444,10 +444,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec8ff81b581bb7c4aa6d81df0410fd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 80
-  accelerateSpeed: 550
+  turnSpeed: 90
+  accelerateSpeed: 600
   CurrentPowerUp: {fileID: 0}
   points: 0
+  winner: 0
 --- !u!114 &9184689962395876784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -552,11 +553,35 @@ MonoBehaviour:
     m_ActionId: b386569f-da3c-4c87-8cde-899cfae42079
     m_ActionName: 'Arrow/PowerUp[/Keyboard/space]'
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6620720057800876890}
+        m_TargetAssemblyTypeName: BoatController, Assembly-CSharp
+        m_MethodName: OnMove
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: d648bd81-162d-495f-a185-7f923487badb
     m_ActionName: Gamepad/Movement
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6620720057800876890}
+        m_TargetAssemblyTypeName: BoatController, Assembly-CSharp
+        m_MethodName: OnPowerUp
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: 15eee65e-cf18-47f8-a39e-6f03cf3662b2
     m_ActionName: Gamepad/PowerUp
   m_NeverAutoSwitchControlSchemes: 0
@@ -577,6 +602,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 4697087510144165393}
+  goalScoreText: {fileID: 4589567670197441059}
+  crow: {fileID: 3045136414519811305}
   controller: {fileID: 6620720057800876890}
 --- !u!1 &2763127651731575467
 GameObject:
@@ -1447,7 +1474,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -7.989}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 17.1, y: 72.8}
+  m_AnchoredPosition: {x: 17.099976, y: 72.79999}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0}
 --- !u!222 &1835800699149788727
@@ -2475,7 +2502,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 8.7566, y: -7.7566}
+  m_AnchoredPosition: {x: 8.756592, y: -7.756592}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 1}
 --- !u!222 &227695327446662832

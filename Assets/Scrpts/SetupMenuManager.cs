@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
-using UnityEngine.InputSystem;
 
 public class SetupMenuManager : MonoBehaviour
 {
@@ -10,69 +10,51 @@ public class SetupMenuManager : MonoBehaviour
     public Button playersLeftArrow;
     public Button playersRightArrow;
 
-    public int minPlayers = 2;
-    public int maxPlayers = 4;
-    private int currentPlayers = 2;
-
     [Header("Points Selector")]
     public TMP_Text pointsText;
     public Button pointsLeftArrow;
     public Button pointsRightArrow;
 
-    public int minPoints = 3;
-    public int maxPoints = 15;
-    private int currentPoints = 3;
+    [Header("Scenes Buttons")]
+    public Button GameScene;
+    public Button MenuScene;
 
     void Start()
     {
-        // Asignación de listeners para cada grupo de flechas
-        playersLeftArrow.onClick.AddListener(() => ChangePlayers(-1));
-        playersRightArrow.onClick.AddListener(() => ChangePlayers(1));
+        playersLeftArrow.onClick.AddListener(() => ChangePlayerNumber(-1));
+        playersRightArrow.onClick.AddListener(() => ChangePlayerNumber(1));
 
         pointsLeftArrow.onClick.AddListener(() => ChangePoints(-1));
         pointsRightArrow.onClick.AddListener(() => ChangePoints(1));
 
-        UpdatePlayersDisplay();
-        UpdatePointsDisplay();
+        GameScene.onClick.AddListener(() => SceneManager.LoadScene("Movement"));
+        MenuScene.onClick.AddListener(() => SceneManager.LoadScene("GameScene"));
+
+        UpdateDisplay(playersText, ConfigManager.Instance.PlayerNumber);
+        UpdateDisplay(pointsText, ConfigManager.Instance.WinPoint);
     }
 
     void Update()
     {
-        maxPlayers = CountGamepadDevices();
-        currentPlayers = Mathf.Clamp(currentPlayers, minPlayers, maxPlayers);
-        UpdatePlayersDisplay();
+        ConfigManager.Instance.LimitPlayerNumber = DevicesUtils.CountDevices() + 1;
+        ConfigManager.Instance.PlayerNumber = Mathf.Clamp(ConfigManager.Instance.PlayerNumber, ConfigManager.MINPLAYERS, ConfigManager.Instance.LimitPlayerNumber);
+        UpdateDisplay(playersText, ConfigManager.Instance.PlayerNumber);
     }
 
-    void ChangePlayers(int delta)
+    void ChangePlayerNumber(int change)
     {
-        currentPlayers = Mathf.Clamp(currentPlayers + delta, minPlayers, maxPlayers);
-        UpdatePlayersDisplay();
+        ConfigManager.Instance.PlayerNumber = Mathf.Clamp(ConfigManager.Instance.PlayerNumber + change, ConfigManager.MINPLAYERS, ConfigManager.Instance.LimitPlayerNumber);
+        UpdateDisplay(playersText, ConfigManager.Instance.PlayerNumber);
     }
 
-    void ChangePoints(int delta)
+    void ChangePoints(int change)
     {
-        currentPoints = Mathf.Clamp(currentPoints + delta, minPoints, maxPoints);
-        UpdatePointsDisplay();
+        ConfigManager.Instance.WinPoint = Mathf.Clamp(ConfigManager.Instance.WinPoint + change, ConfigManager.MINPOINTS, ConfigManager.MAXPOINTS);
+        UpdateDisplay(pointsText, ConfigManager.Instance.WinPoint);
     }
 
-    void UpdatePlayersDisplay()
+    void UpdateDisplay(TMP_Text text, int value)
     {
-        playersText.text = currentPlayers.ToString();
-    }
-
-    void UpdatePointsDisplay()
-    {
-        pointsText.text = currentPoints.ToString();
-    }
-
-    int CountGamepadDevices()
-    {
-        int count = 1;
-        foreach (var device in InputSystem.devices)
-        {
-            if (device is not Mouse)
-                count++;
-        }
-        return count;
+        text.text = value.ToString();
     }
 }

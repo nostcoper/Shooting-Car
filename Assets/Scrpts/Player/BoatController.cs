@@ -10,7 +10,7 @@ public class BoatController : MonoBehaviour
     private bool powerUpInput;
     public PowerUpBase CurrentPowerUp;
     public int points;
-
+    public bool winner = false;
     void Start()
     {
         rb = GetComponent<Rigidbody>();
