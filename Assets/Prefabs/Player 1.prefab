@@ -358,6 +358,8 @@ GameObject:
   - component: {fileID: 9184689962395876784}
   - component: {fileID: 7181941730609349231}
   - component: {fileID: 2227714463921957860}
+  - component: {fileID: 556661703740229085}
+  - component: {fileID: 8485120969740144256}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Player
@@ -612,6 +614,43 @@ MonoBehaviour:
   controller: {fileID: 6620720057800876890}
   powerUpIcon: {fileID: 2880370474335389670}
   gameManager: {fileID: 0}
+--- !u!114 &556661703740229085
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323281713053060351}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1552182283, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SortKey: 1956471224
+  ObjectInterest: 1
+  Flags: 262145
+  NestedObjects: []
+  NetworkedBehaviours:
+  - {fileID: 6620720057800876890}
+  - {fileID: 8485120969740144256}
+  ForceRemoteRenderTimeframe: 0
+--- !u!114 &8485120969740144256
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2323281713053060351}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _stateAuthorityChangeErrorCorrectionDelta: 0
+  SyncScale: 0
+  SyncParent: 0
+  _autoAOIOverride: 1
+  DisableSharedModeInterpolation: 0
 --- !u!1 &2755486534885901169
 GameObject:
   m_ObjectHideFlags: 0
